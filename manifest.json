@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+
+  "name": "CommentSpotlight",
+  "description": "Get to the most interesting timestamps in a video faster! CommentSpotlight filters through all the youtube comments to locate the important/interesting timestamps in a video.",
+  "version": "1.0",
+
+  
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://*/",
+    "https://*/",
+    "storage",
+    "https://ajax.googleapis.com/"
+    
+  ],
+ 
+ "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+   "content_scripts": [
+    {
+      "matches": ["http://www.youtube.com/*", "https://www.youtube.com/*"],
+      "js": ["jquery-2.1.4.min.js", "findComments.js"]
+    }
+  ],
+
+   "page_action": {
+    "default_title": "CommentSpotlight",
+    "default_popup": "popup.html",
+    "default_icon": "lightbulb.png"
+  }
+
+
+
+}
+
