@@ -8,7 +8,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if (previousURL != tab.url && tab.url.indexOf(previousURL) == -1) {
           
         //We need this executeScript line since youtube doesn't reload page when new video is clicked.
-         chrome.tabs.executeScript(tabId,{file: 'testingNewYoutube.js'}, function(response){          
+         chrome.tabs.executeScript(tabId,{file: 'findComments.js'}, function(response){          
          });
          previousURL = tab.url;         
        }
